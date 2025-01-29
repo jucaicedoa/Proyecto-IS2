@@ -1,11 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Inventicash</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Inventicash</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="/js/main.js"></script>
 </head>
-<body>
-    <h1>Home</h1>
-    <p>Bienvenido a Inventicash.</p>
-</body>
+<body class="bg-[#FFEFFF] flex flex-col min-h-screen">
 
+    <div class="flex flex-col items-center justify-center flex-grow px-4">
+
+        <!-- Logo -->
+        <div class="mb-2">
+            <img src="/assets/img/ico.png" alt="Logo de Inventicash" class="w-34 h-34 sm:w-34 sm:h-34">
+        </div>
+
+        <!-- Formulario de Login -->
+        <form id="login-form" class="bg-[#12295D] p-6 rounded-lg shadow-lg w-full max-w-md" onsubmit="return validateForm(event)">
+            <h2 class="text-white text-2xl text-center mb-4">Iniciar Sesión</h2>
+
+            <!-- Usuario -->
+            <div class="mb-4">
+                <label for="username" class="block text-white mb-2">Usuario</label>
+                <input type="text" id="username" name="username" class="w-full p-2 rounded border border-gray-300" placeholder="Ingresa tu usuario" required>
+            </div>
+
+            <!-- Contraseña -->
+            <div class="mb-4">
+                <label for="password" class="block text-white mb-2">Contraseña</label>
+                <input type="password" id="password" name="password" class="w-full p-2 rounded border border-gray-300" placeholder="Ingresa tu contraseña" required>
+                <small id="password-error" class="text-red-500 hidden">La contraseña debe tener al menos 8 caracteres, incluyendo una letra mayúscula, una minúscula y un número.</small>
+            </div>
+
+            <!-- Botón de envío -->
+            <button type="submit" id="submit-btn" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-green-500 transition-colors">Ingresar</button>
+        </form>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#12295D] w-full py-2 mt-3 text-center text-white">
+        <p>©2025 Inventicash todos los derechos reservados.</p>
+    </footer>
+
+</body>
 </html>
