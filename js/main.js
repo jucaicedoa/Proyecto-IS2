@@ -15,9 +15,12 @@ function validateForm(event) {
     } else {
         passwordError.classList.add("hidden");
     }
+    
+    // Redirigir si todo es válido
+    window.location.href = "pantallainicial.html";
+}
 
-    // Si todo es válido, puedes proceder con el envío del formulario o acciones adicionales
-    alert("Formulario enviado exitosamente");
-    // Aquí normalmente iría el código para enviar el formulario a un servidor.
-    return true;
+// script redirección
+function navigateTo(page) {
+    window.location.href = page;
 }
