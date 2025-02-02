@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Venta</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/main.js" defer></script>
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <header class="bg-[#12295D] text-white">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-2">
+            <!-- Logo and Title -->
+            <div class="flex items-center space-x-4">
+                <h1 class="text-2xl font-bold">Registro de Venta</h1>
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex space-x-2">
+                <button class="bg-white text-[#12295D] px-4 py-2 rounded-lg hover:bg-gray-200">Inicio</button>
+                <button class="bg-white text-[#12295D] px-4 py-2 rounded-lg hover:bg-gray-200">Salir</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="content max-w-7xl mx-auto w-full flex">
+        <!-- Sidebar -->
+        <div class="sidebar bg-white shadow-md h-full p-4 flex-shrink-0">
+            <img src="/assets/img/ico.png" alt="Logo" class="w-17 h-17">
+            <button id="registrarVentaBtn" class="bg-[#12295D] text-white w-full py-4 text-center hover:bg-blue-800">Registrar Venta</button>
+        </div>
+
+        <!-- Main Content -->
+        <div id="ventaFormContainer" class="main hidden bg-[#FFEFFF] rounded-lg shadow-xl p-6 w-full">
+            <img src="/assets/img/ico.png" alt="Logo" class="w-14 h-14">
+            <h1 class="text-2xl font-bold text-[#12295D] mb-4">Registro de Venta</h1>
+
+            <form id="ventaForm" class="space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label for="numero" class="block font-medium text-gray-700">Número</label>
+                        <input type="text" id="numero" class="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" placeholder="Número de venta">
+                    </div>
+                    <div>
+                        <label for="fecha" class="block font-medium text-gray-700">Fecha</label>
+                        <input type="date" id="fecha" class="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200">
+                    </div>
+                    <div>
+                        <label for="cliente" class="block font-medium text-gray-700">Cliente</label>
+                        <input type="text" id="cliente" class="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" placeholder="Nombre del cliente">
+                    </div>
+                    <div>
+                        <label for="observaciones" class="block font-medium text-gray-700">Observaciones</label>
+                        <input type="text" id="observaciones" class="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" placeholder="Notas adicionales">
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <h2 class="font-bold text-gray-700">Detalle de Productos</h2>
+                    <div class="grid grid-cols-4 gap-4 items-end mt-2">
+                        <div>
+                            <label for="codigoProducto" class="block font-medium text-gray-700">Código</label>
+                            <input type="text" id="codigoProducto" class="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" placeholder="Código del producto">
+                        </div>
+                        <div>
+                            <label for="descripcionProducto" class="block font-medium text-gray-700">Descripción</label>
+                            <input type="text" id="descripcionProducto" class="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" placeholder="Descripción">
+                        </div>
+                        <div>
+                            <label for="cantidadProducto" class="block font-medium text-gray-700">Cantidad</label>
+                            <input type="number" id="cantidadProducto" class="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" placeholder="Cantidad">
+                        </div>
+                        <div>
+                            <button type="button" onclick="agregarProducto()" class="bg-[#12295D] text-white px-4 py-2 rounded-lg hover:bg-blue-800">Agregar</button>
+                        </div>
+                    </div>
+
+                    <table class="w-full border border-gray-300 rounded-lg mt-4">
+                        <thead>
+                            <tr class="bg-gray-200">
+                                <th class="border px-4 py-2">Código</th>
+                                <th class="border px-4 py-2">Descripción</th>
+                                <th class="border px-4 py-2">Cantidad</th>
+                                <th class="border px-4 py-2">Precio</th>
+                                <th class="border px-4 py-2">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productosBody"></tbody>
+                    </table>
+
+                    <div class="mt-4 text-right font-bold text-gray-700">
+                        Total Precio: <span id="totalPrecio">0</span>
+                    </div>
+                </div>
+
+                <div class="flex justify-between mt-6">
+                    <button type="reset" class="bg-[#12295D] text-white px-4 py-2 rounded-lg hover:bg-blue-800">Limpiar</button>
+                    <button type="button" class="bg-[#12295D] text-white px-4 py-2 rounded-lg hover:bg-blue-800" onclick="guardarVenta()">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#12295D] text-white py-2">
+        <div class="text-center text-sm">©2025 Inventicash todos los derechos reservados.</div>
+    </footer>
+</body>
+</html>
