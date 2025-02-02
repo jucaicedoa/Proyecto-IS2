@@ -1,8 +1,14 @@
-// Array para almacenar los egresos registrados
-let egresos = [];
+// Recuperar los egresos almacenados en localStorage al cargar la página
+let egresos = JSON.parse(localStorage.getItem('egresos')) || [];
+
+// Actualizar la tabla con los egresos almacenados
+document.addEventListener('DOMContentLoaded', function() {
+    actualizarTabla();
+});
+
 
 document.getElementById('btnInicio').addEventListener('click', function() {
-    window.location.href = '../pantallaInicial.html'; // Cambia 'index.html' a la URL deseada
+    window.location.href = '../pantallaInicial.html'; // Cambia 'pantallaInicial.html' a la URL deseada
 });
 
 document.getElementById('btnSalir').addEventListener('click', function() {
@@ -37,6 +43,9 @@ document.getElementById('guardar').addEventListener('click', function() {
 
     // Agregar el nuevo egreso al array de egresos
     egresos.push(nuevoEgreso);
+
+    // Guardar los egresos en localStorage
+    localStorage.setItem('egresos', JSON.stringify(egresos));
 
     // Actualizar la tabla de egresos
     actualizarTabla();
