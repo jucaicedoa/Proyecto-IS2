@@ -17,8 +17,8 @@
 
          <!-- Botones de navegación (Inicio y Salir) -->
         <div class="flex space-x-4">
-            <button class="bg-white text-black px-4 py-2 rounded">Inicio</button>
-            <button class="bg-white text-black px-4 py-2 rounded">Salir</button>
+            <button id="btnInicio" class="bg-white text-black px-4 py-2 rounded">Inicio</button>
+            <button id="btnSalir" class="bg-white text-black px-4 py-2 rounded">Salir</button>
         </div>
     </header>
 
@@ -33,7 +33,13 @@
                     <input type="date" id="fecha" class="w-full p-2 rounded border">
                 </label>
                 <label class="block">Categoría 
-                    <input type="text" id="categoria" class="w-full p-2 rounded border">
+                    <select id="categoria" class="w-full p-2 rounded border">
+                        <option value="">Seleccione una opción</option> <!-- Opción predeterminada sin valor -->
+                        <option value="Salarios">Salarios</option>
+                        <option value="Arrendamiento">Arrendamiento</option>
+                        <option value="Proveedores">Proveedores</option>
+                        <option value="Servicios Publicos">Servicios Públicos</option>
+                    </select>
                 </label>
                 <label class="block">Descripción 
                     <input type="text" id="descripcion" class="w-full p-2 rounded border">
@@ -65,6 +71,6 @@
         </section>
     </main>
      <!-- Enlace al archivo JavaScript que manejará la lógica de la página -->
-    <script src="/js/egresos.js"></script>
+    <script src="../js/egresos.js"></script>
 </body>
 </html>
