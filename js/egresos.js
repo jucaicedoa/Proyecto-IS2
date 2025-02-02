@@ -2,11 +2,11 @@
 let egresos = [];
 
 document.getElementById('btnInicio').addEventListener('click', function() {
-    window.location.href = '../index.html'; // Cambia 'index.html' a la URL deseada
+    window.location.href = '../pantallaInicial.html'; // Cambia 'index.html' a la URL deseada
 });
 
 document.getElementById('btnSalir').addEventListener('click', function() {
-    window.location.href = 'inventario.html'; // Cambia 'inventario.html' a la URL deseada
+    window.location.href = '../index.html'; // Cambia 'inventario.html' a la URL deseada
 });
 
 // Función que maneja el evento de guardar un nuevo egreso
