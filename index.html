@@ -3,46 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Inventicash</title>
+    <title>Inventicash</title>
+    <link rel="icon" href="/assets/img/ico.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="/js/main.js"></script>
 </head>
 <body class="bg-[#FFEFFF] flex flex-col min-h-screen">
 
-    <div class="flex flex-col items-center justify-center flex-grow px-4">
+    <!-- Header -->
+    <header class="bg-[#12295D] w-full py-2 text-center text-white shadow-md">
+        <h1 class="text-2xl font-bold">Bienvenido a Inventicash</h1>
+    </header>
 
+    <div class="flex flex-grow w-full p-2 flex-col md:flex-row">
         <!-- Logo -->
-        <div class="mb-2">
-            <img src="/assets/img/ico.png" alt="Logo de Inventicash" class="w-34 h-34 sm:w-34 sm:h-34">
+        <div class="w-full md:w-1/2 flex items-center justify-center bg-[#FFFBF2] p-8 rounded-r-lg shadow-lg">
+            <img src="/assets/img/ico.png" alt="Logo de Inventicash" class="w-40 h-40 sm:w-52 sm:h-52 animate-bounce">
         </div>
 
         <!-- Formulario de Login -->
-        <form id="login-form" class="bg-[#12295D] p-6 rounded-lg shadow-lg w-full max-w-md" onsubmit="return validateForm(event)">
-            <h2 class="text-white text-2xl text-center mb-4">Iniciar Sesión</h2>
+        <div class="w-full md:w-1/2 flex items-center justify-center">
+            <form id="login-form" class="bg-[#12295D] p-8 rounded-lg shadow-2xl w-full max-w-md border border-[#FFFBF2]" onsubmit="return validateForm(event)">
+                <h2 class="text-white text-3xl text-center mb-6 font-semibold">Iniciar Sesión</h2>
 
-            <!-- Usuario -->
-            <div class="mb-4">
-                <label for="username" class="block text-white mb-2">Usuario</label>
-                <input type="text" id="username" name="username" class="w-full p-2 rounded border border-gray-300" placeholder="Ingresa tu usuario" required>
-            </div>
+                <!-- Usuario -->
+                <div class="mb-6">
+                    <label for="username" class="block text-white mb-2 font-medium">Usuario</label>
+                    <input type="text" id="username" name="username" class="w-full p-3 rounded border border-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FFFBF2]" placeholder="Ingresa tu usuario" required>
+                </div>
 
-            <!-- Contraseña -->
-            <div class="mb-4">
-                <label for="password" class="block text-white mb-2">Contraseña</label>
-                <input type="password" id="password" name="password" class="w-full p-2 rounded border border-gray-300" placeholder="Ingresa tu contraseña" required>
-                <small id="password-error" class="text-red-500 hidden">La contraseña debe tener al menos 8 caracteres, incluyendo una letra mayúscula, una minúscula y un número.</small>
-            </div>
+                <!-- Contraseña -->
+                <div class="mb-6">
+                    <label for="password" class="block text-white mb-2 font-medium">Contraseña</label>
+                    <input type="password" id="password" name="password" class="w-full p-3 rounded border border-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FFFBF2]" placeholder="Ingresa tu contraseña" required>
+                    <small id="password-error" class="text-red-500 hidden">La contraseña debe tener al menos 8 caracteres, incluyendo una letra mayúscula, una minúscula y un número.</small>
+                </div>
 
-            <!-- Botón de envío -->
-            <button type="submit" id="submit-btn" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-green-500 transition-colors">Ingresar</button>
-        </form>
-
+                <!-- Botón de envío -->
+                <button type="submit" id="submit-btn" class="w-full bg-blue-500 text-white p-3 rounded-lg hover:bg-green-500 transition-transform transform hover:scale-105">Ingresar</button>
+            </form>
+        </div>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-[#12295D] w-full py-2 mt-3 text-center text-white">
-        <p>©2025 Inventicash todos los derechos reservados.</p>
+    <footer class="bg-[#12295D] w-full py-2 text-center text-white shadow-inner">
+        <p class="text-sm">©2025 Inventicash todos los derechos reservados.</p>
     </footer>
-
 </body>
 </html>

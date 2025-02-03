@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Inventicash</title>
+    <link rel="icon" href="/assets/img/ico.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/main.js"></script>
+</head>
+<body class="bg-[#FFEFFF] flex flex-col items-center min-h-screen">
+
+    <!-- Encabezado -->
+    <header class="bg-[#12295D] w-full p-2 flex justify-between items-center shadow-md">
+        <div>
+            <h1 class="text-white text-2xl font-bold">Inicio</h1>
+        </div>
+        <div>
+            <button onclick="navigateTo('index.html')" class="bg-white text-black px-4 py-2 rounded-lg shadow hover:bg-red-400 transition-all">Salir</button>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <div class="flex flex-col items-center mt-12 w-full px-4">
+        <img src="/assets/img/ico.png" alt="Logo" class="w-36 h-36 mb-6 animate-pulse">
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
+            <!-- CRUD Inventario -->
+            <div class="bg-[#12295D] text-white p-8 rounded-lg shadow-lg text-center transform hover:scale-105 transition-all">
+                <h2 class="text-xl font-bold mb-4">CRUD Inventario</h2>
+                <button onclick="navigateTo('/paginas/inventario.html')" class="bg-white text-black px-6 py-2 rounded-lg shadow hover:bg-gray-200 transition-all">Entrar</button>
+            </div>
+            <!-- Registro Venta -->
+            <div class="bg-[#12295D] text-white p-8 rounded-lg shadow-lg text-center transform hover:scale-105 transition-all">
+                <h2 class="text-xl font-bold mb-4">Registro Venta</h2>
+                <button onclick="navigateTo('/paginas/registroVenta.html')" class="bg-white text-black px-6 py-2 rounded-lg shadow hover:bg-gray-200 transition-all">Entrar</button>
+            </div>
+            <!-- Registro Egreso -->
+            <div class="bg-[#12295D] text-white p-8 rounded-lg shadow-lg text-center transform hover:scale-105 transition-all">
+                <h2 class="text-xl font-bold mb-4">Registro Egreso</h2>
+                <button onclick="navigateTo('/paginas/registroEgreso.html')" class="bg-white text-black px-6 py-2 rounded-lg shadow hover:bg-gray-200 transition-all">Entrar</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
